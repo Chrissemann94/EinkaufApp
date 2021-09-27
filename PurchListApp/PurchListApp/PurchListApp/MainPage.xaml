@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PurchListApp.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Meine EinkaufsApp" x:Name="Titel" BackgroundColor="Black" TextColor="White" HeightRequest="80"
+                       FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" 
+                   VerticalTextAlignment="Center" VerticalOptions="StartAndExpand"/>
+
+            <!--<Switch IsToggled="false" x:Name="ModeSwitch" Toggled="Switch_ChangeMode" />-->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                <ImageButton x:Name="Button_Einkaufsliste" Clicked="Button_Clicked_To_Einkaufsliste" BackgroundColor="LightGreen" 
+                             Source="ButtonEinkauf.png" WidthRequest="200" CornerRadius="15"/>
+                <ImageButton x:Name="Button_Produktliste" Clicked="Button_Clicked_To_Produktliste" BackgroundColor="Aqua" 
+                             Source="ButtonArtikel.png" WidthRequest="200" CornerRadius="15" />
+            </StackLayout>
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

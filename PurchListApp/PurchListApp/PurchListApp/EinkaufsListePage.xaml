@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PurchListApp.EinkaufsListePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Einkaufsliste" x:Name="Titel" BackgroundColor="LightGreen" HeightRequest="80"
+                   TextColor="Black" FontSize="Large" FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <!--<Switch IsToggled="false" x:Name="ModeSwitch" Toggled="Switch_ChangeMode" />-->
+
+            <ListView x:Name="EinkaufsListView" ItemSelected="EinkaufsListView_ItemSelected" SeparatorColor="LightGreen">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="0, 0, 10, 10">
+                                <Image Source="{Binding ImgLink}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Label HorizontalOptions="StartAndExpand" FontSize="26" Text="{Binding Name}"/>
+                                <Label Text="{Binding Beschreibung}" FontSize="30" VerticalOptions="CenterAndExpand"/>
+                                <Label HorizontalOptions="EndAndExpand" FontSize="30" VerticalOptions="CenterAndExpand" Text="{Binding Count}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+             
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

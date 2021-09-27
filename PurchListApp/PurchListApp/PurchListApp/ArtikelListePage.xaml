@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PurchListApp.ArtikelListePage">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="Artikelliste" x:Name="Titel" BackgroundColor="Aqua" HeightRequest="80"
+                       TextColor="Black" FontSize="Large" FontAttributes="Bold" 
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <!--<Switch IsToggled="false" x:Name="ModeSwitch" Toggled="Switch_ChangeMode" />-->
+
+            <ListView x:Name="ProduktListView" ItemSelected="ProduktListView_ItemSelected" SeparatorColor="Aqua">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Name}" Detail="{Binding Beschreibung}" ImageSource="{Binding ImgLink}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="Button_Hinzufuegen" Clicked="Button_Clicked_To_Hinzufuegen" VerticalOptions="EndAndExpand"  Text="Artikel Hinzufügen" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
