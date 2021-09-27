@@ -25,23 +25,5 @@ namespace PurchListApp
             m.Count = 1;
             MainPage.artikelListeEinkaufsliste.Remove(m);
         }
-
-
-        // Dark and Lightmode
-        // void Switch_ChangeMode(object sender, EventArgs e)
-        // {
-        //     if (ModeSwitch.IsToggled == true)
-        //     {
-        //         Content.BackgroundColor = Color.Black;
-        //         Titel.BackgroundColor = Color.DarkOrange;
-        //         Titel.TextColor = Color.Black;
-        //     }
-        //     else
-        //     {
-        //         Content.BackgroundColor = Color.White;
-        //         Titel.BackgroundColor = Color.LightGreen;
-        //         Titel.TextColor = Color.Black;
-        //     }
-        // }
     }
 }

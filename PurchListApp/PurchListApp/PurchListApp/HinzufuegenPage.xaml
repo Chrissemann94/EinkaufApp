@@ -4,7 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PurchListApp.HinzufuegenPage">
+             x:Class="PurchListApp.HinzufuegenPage"
+             Title="Artikel hinzufügen"
+             BackgroundColor="{DynamicResource BackgroundColor}">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Artikel hinzufügen" x:Name="Titel" BackgroundColor="Black" TextColor="White" FontSize="Large"

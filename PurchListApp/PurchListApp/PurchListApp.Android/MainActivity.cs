@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using static PurchListApp.App;
+using PurchListApp.Styles;
 
 namespace PurchListApp.Droid
 {
@@ -22,12 +24,46 @@ namespace PurchListApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            SetAppTheme();
         }
+
+        void SetAppTheme()
+        {
+            if (Resources.Configuration.UiMode.HasFlag(Android.Content.Res.UiMode.NightYes))
+            {
+                SetTheme(PurchListApp.Theme.Dark);
+            }
+
+            else
+            {
+                SetTheme(PurchListApp.Theme.Light);
+            }
+        }
+
+        void SetTheme(Theme mode)
+        {
+            if (mode == PurchListApp.Theme.Dark)
+            {
+                if (App.AppTheme == PurchListApp.Theme.Dark)
+                    return;
+                App.Current.Resources = new DarkTheme();
+            }
+            else
+            {
+                if (App.AppTheme != PurchListApp.Theme.Dark)
+                    return;
+                App.Current.Resources = new LightTheme();
+            }
+            App.AppTheme = mode;
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+
     }
 }

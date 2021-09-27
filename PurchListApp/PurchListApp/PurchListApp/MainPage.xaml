@@ -4,22 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PurchListApp.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
+             x:Class="PurchListApp.MainPage"
+             Title="EinkaufsApp"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ModeMenuItem" Text="Menu" IconImageSource="moon" Clicked="Handle_ModeChange"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout BackgroundColor="{DynamicResource BackgroundColor}">
 
-            <Label Text="Meine EinkaufsApp" x:Name="Titel" BackgroundColor="Black" TextColor="White" HeightRequest="80"
+        <Label Text="Meine EinkaufsApp" x:Name="Titel" BackgroundColor="Black" TextColor="White" HeightRequest="80"
                        FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" 
                    VerticalTextAlignment="Center" VerticalOptions="StartAndExpand"/>
 
-            <!--<Switch IsToggled="false" x:Name="ModeSwitch" Toggled="Switch_ChangeMode" />-->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
-                <ImageButton x:Name="Button_Einkaufsliste" Clicked="Button_Clicked_To_Einkaufsliste" BackgroundColor="LightGreen" 
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+            <ImageButton x:Name="Button_Einkaufsliste" Clicked="Button_Clicked_To_Einkaufsliste" BackgroundColor="LightGreen" 
                              Source="ButtonEinkauf.png" WidthRequest="200" CornerRadius="15"/>
-                <ImageButton x:Name="Button_Produktliste" Clicked="Button_Clicked_To_Produktliste" BackgroundColor="Aqua" 
+            <ImageButton x:Name="Button_Produktliste" Clicked="Button_Clicked_To_Produktliste" BackgroundColor="Aqua" 
                              Source="ButtonArtikel.png" WidthRequest="200" CornerRadius="15" />
-            </StackLayout>
-        
         </StackLayout>
-    </ContentPage.Content>
+
+    </StackLayout>
 </ContentPage>

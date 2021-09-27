@@ -4,7 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PurchListApp.ArtikelListePage">
+             x:Class="PurchListApp.ArtikelListePage"
+             Title="Artikelliste"
+             BackgroundColor="{DynamicResource BackgroundColor}">
     <ContentPage.Content>
 
         <StackLayout>
@@ -12,7 +14,7 @@
                        TextColor="Black" FontSize="Large" FontAttributes="Bold" 
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-            <!--<Switch IsToggled="false" x:Name="ModeSwitch" Toggled="Switch_ChangeMode" />-->
+            
 
             <ListView x:Name="ProduktListView" ItemSelected="ProduktListView_ItemSelected" SeparatorColor="Aqua">
                 <ListView.ItemTemplate>

@@ -91,22 +91,5 @@ namespace PurchListApp
         {
             Navigation.PushAsync(new HinzufuegenPage());
         }
-
-        // Dark and Lightmode
-        // void Switch_ChangeMode(object sender, EventArgs e)
-        // {
-        //     if (ModeSwitch.IsToggled == true)
-        //     {
-        //         Content.BackgroundColor = Color.Black;
-        //         Titel.BackgroundColor = Color.DarkOrange;
-        //         Titel.TextColor = Color.Black;
-        //     }
-        //     else
-        //     {
-        //         Content.BackgroundColor = Color.White;
-        //         Titel.BackgroundColor = Color.Aqua;
-        //         Titel.TextColor = Color.Black;
-        //     }
-        // }
     }
 }

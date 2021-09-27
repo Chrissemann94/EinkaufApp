@@ -19,7 +19,6 @@ namespace PurchListApp
         public MainPage()
         {
             InitializeComponent();
-
         }
 
         private void Button_Clicked_To_Einkaufsliste(object sender, EventArgs e)
@@ -31,24 +30,32 @@ namespace PurchListApp
         {
             Navigation.PushAsync(new ArtikelListePage());
         }
-       
 
 
-        // Dark and Lightmode
-        // void Switch_ChangeMode(object sender, EventArgs e)
-        // {
-        //     if (ModeSwitch.IsToggled == true)
-        //     {
-        //         Content.BackgroundColor = Color.Black;
-        //         Titel.BackgroundColor = Color.DarkOrange;
-        //         Titel.TextColor = Color.Black;              
-        //     }
-        //     else
-        //     {
-        //         Content.BackgroundColor = Color.White;
-        //         Titel.BackgroundColor = Color.Black;
-        //         Titel.TextColor = Color.White;
-        //     }
-        // }
+        public void Handle_ModeChange(object sender, EventArgs e)
+        {
+            Theme themeRequested = App.AppTheme == Theme.Light ? Theme.Dark : Theme.Light;
+            MessagingCenter.Send(this, "ModeChanged", themeRequested);
+            SetIcon();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            SetIcon();
+        }
+
+        void SetIcon()
+        {
+            if (App.AppTheme == Theme.Light)
+            {
+                ModeMenuItem.IconImageSource = "moon.png";
+            }
+            else
+            {
+
+                ModeMenuItem.IconImageSource = "sun.png";
+            }
+        }
     }
 }

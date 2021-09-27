@@ -4,15 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PurchListApp.EinkaufsListePage">
+             x:Class="PurchListApp.EinkaufsListePage"
+             Title="Einkaufsliste"
+             BackgroundColor="{DynamicResource BackgroundColor}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Einkaufsliste" x:Name="Titel" BackgroundColor="LightGreen" HeightRequest="80"
-                   TextColor="Black" FontSize="Large" FontAttributes="Bold" 
+            <Label Text="Einkaufsliste" class="Titel" BackgroundColor="LightGreen" HeightRequest="80"
+                   TextColor="{DynamicResource TextPrimaryColor}" FontSize="Large" FontAttributes="Bold" 
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-            <!--<Switch IsToggled="false" x:Name="ModeSwitch" Toggled="Switch_ChangeMode" />-->
-
+           
             <ListView x:Name="EinkaufsListView" ItemSelected="EinkaufsListView_ItemSelected" SeparatorColor="LightGreen">
                 <ListView.ItemTemplate>
                     <DataTemplate>
